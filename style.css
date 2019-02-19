@@ -1,0 +1,137 @@
+body {
+  background-color: lightblue;
+}
+
+.chat-box {
+  width: 300px;
+  height: 450px;
+  position:absolute;
+  bottom:0;
+  right:0;
+  background-color: white;
+  box-shadow: -3px 3px 6px grey;
+  text-align: center;
+  overflow:hidden;
+  transition: all 0.2s linear;
+  margin: 0px 10px 0px;
+}
+
+.chatbox-header{
+  display:flex;
+  color:white;
+  background-color: darkgrey;
+  z-index:10;
+}
+
+.toggle-view-btn{
+  width:50px;
+  float:right;
+  font-size:30px;
+  font-weight:bold;
+  border: none;
+  color:white;
+  background-color: darkgrey;
+}
+
+.label {
+  text-align: center;
+  font-size:20px;
+  font-weight: bold;
+  margin: 4% auto;
+}
+
+.input-box{
+  width:276px;
+  position: absolute;
+  bottom: 0;
+  left:12px;;
+  margin: 10px auto;
+  z-index:7;
+  padding: 5px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: orange;
+}
+
+.chat-container{
+  list-style-type:none;
+  position: absolute;
+  margin:0 auto;
+  width: 88%;
+  left:2%;
+  bottom: 50px;
+  padding: 3% 5%;
+  max-height:73%;
+  overflow-y: scroll;
+  overflow-x:hidden;
+}
+
+.sent{
+  clear:both;
+  float:right;
+  padding: 3%;
+  width:150px;
+  margin: 3px auto;
+	position: relative;
+	background: skyblue;
+	border-radius: .4em;
+  box-shadow: 2px 2px 2px skyblue;
+
+}
+
+.sent::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: skyblue;
+    border-right: 0;
+    border-bottom: 0;
+    margin-top: 0px;
+    margin-right: -10px;
+}
+
+.received{
+  clear:both;
+  float:left;
+  padding: 3%;
+  width:150px;
+  margin: 3px auto;
+	position: relative;
+	background: lightgreen;
+	border-radius: .4em;
+  box-shadow: 2px 2px 5px lightgreen;
+
+}
+
+.received:after{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-right-color: lightgreen;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: 0px;
+	margin-left: -10px;
+}
