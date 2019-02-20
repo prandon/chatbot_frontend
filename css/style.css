@@ -1,15 +1,35 @@
-body {
-  background-color: white;
+/* Page styling */
+.info{
+  padding: 20px;
+  border:1px solid blue;
 }
 
+.themes-container{
+  width:50%;
+  padding:20px;
+  border:1px solid black;
+}
+
+.theme-box{
+  display:inline-block;
+  width:20%;
+  height:20%;
+  text-align:center;
+  font-weight: bold;
+  margin: 2%;
+}
+
+.box-shadow{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+/* ChatBot styling */
 .chat-box {
   width: 300px;
   height: 450px;
-  position:absolute;
+  position:fixed;
   bottom:0;
   right:0;
-  background-color: white;
-  box-shadow: -3px 3px 6px grey;
   text-align: center;
   overflow:hidden;
   transition: all 0.2s linear;
@@ -19,8 +39,6 @@ body {
 /* Chatbox header styling */
 .chatbox-header{
   display:flex;
-  color:white;
-  background-color: darkgrey;
   z-index:10;
 }
 
@@ -37,8 +55,6 @@ body {
   font-size:30px;
   font-weight:bold;
   border: none;
-  color:white;
-  background-color: darkgrey;
 }
 
 .toggle-view-btn:focus{
@@ -66,9 +82,8 @@ body {
   width:150px;
   margin: 3px auto;
 	position: relative;
-	background: skyblue;
+	background: white;
 	border-radius: .4em;
-  box-shadow: 2px 2px 2px skyblue;
   white-space: pre-wrap;      /* CSS3 */   
   white-space: -moz-pre-wrap; /* Firefox */    
   white-space: -pre-wrap;     /* Opera <7 */   
@@ -84,7 +99,7 @@ body {
     width: 0;
     height: 0;
     border: 10px solid transparent;
-    border-left-color: skyblue;
+    border-left-color: white;
     border-right: 0;
     border-bottom: 0;
     margin-top: 0px;
@@ -98,9 +113,8 @@ body {
   width:150px;
   margin: 3px auto;
 	position: relative;
-	background: lightgreen;
+	background: white;
 	border-radius: .4em;
-  box-shadow: 2px 2px 5px lightgreen;
   white-space: pre-wrap;      /* CSS3 */   
   white-space: -moz-pre-wrap; /* Firefox */    
   white-space: -pre-wrap;     /* Opera <7 */   
@@ -116,7 +130,7 @@ body {
 	width: 0;
 	height: 0;
 	border: 10px solid transparent;
-	border-right-color: lightgreen;
+	border-right-color: white;
 	border-left: 0;
 	border-bottom: 0;
 	margin-top: 0px;
