@@ -6,7 +6,7 @@ let toggleViewBtn = document.getElementById("toggleViewBtn");
 let chatContainer = document.getElementById("chatContainer");
 let themeContainer = document.getElementById("themes");
 let chatBoxHeader = document.getElementById("chatBoxHeader");
-let colors = ['black','pink','red'];
+let colors = ['black','darkgreen','red','darkblue'];
 
 
 // When user hit send the message following function executes. 
@@ -62,7 +62,7 @@ function addColor() {
             renderThemes();
             }
         changeTheme(inputColor.value);
-    } else if(inputColor.value!='white'||isColor(inputColor.value)){
+    } else if(inputColor.value!='white'&&isColor(inputColor.value)){
             if(!colors.includes(inputColor.value)){
                 colors.push(inputColor.value);
                 renderThemes();

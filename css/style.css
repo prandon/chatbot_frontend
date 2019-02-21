@@ -5,9 +5,11 @@
 
 .themes-container{
   width:50%;
+  max-height:50%;
   padding:20px;
   border:1px solid black;
   margin: 10px 0px;
+  overflow:scroll;
 }
 
 .theme-box{
