@@ -1,9 +1,13 @@
 let id = 1;
 let inputBox = document.getElementById("userBox");
+let inputColor = document.getElementById("inputColor");
 let chatBox = document.getElementById("chatBox");
 let toggleViewBtn = document.getElementById("toggleViewBtn");
 let chatContainer = document.getElementById("chatContainer");
+let themeContainer = document.getElementById("themes");
 let chatBoxHeader = document.getElementById("chatBoxHeader");
+let colors = ['black','pink','red'];
+
 
 // When user hit send the message following function executes. 
 const userAction = async () => {
@@ -49,6 +53,27 @@ function toggleView() {
   }
 }
 
+// Add color function 
+function addColor() {
+    if (/^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(inputColor.value)) { // matching hex values
+        //Match
+        if(!colors.includes(inputColor.value)){
+            colors.push(inputColor.value);
+            renderThemes();
+            }
+        changeTheme(inputColor.value);
+    } else if(inputColor.value!='white'||isColor(inputColor.value)){
+            if(!colors.includes(inputColor.value)){
+                colors.push(inputColor.value);
+                renderThemes();
+            }
+            changeTheme(inputColor.value);
+        } else {
+            alert('Please choose a valid color');
+        }
+    
+}
+
 // Theme changing function 
 function changeTheme(color){
     chatBoxHeader.style.backgroundColor = color;
@@ -56,19 +81,22 @@ function changeTheme(color){
     toggleViewBtn.style.backgroundColor = color;
     toggleViewBtn.style.color = 'white';
     chatBox.style.backgroundImage= 'linear-gradient(to bottom, white 40%, '+color+')';
-
 }
 
 // Render themes
 function renderThemes(){
-    var themeContainer = document.getElementById("themes");
-    let colors = ['red','orange','darkorange','blue','skyblue','black','darkgrey','gold','tomato','pink','aqua','indigo','lightskyblue','cornflowerblue','violet','#23456A'];
-
+    themeContainer.innerHTML = "";
     for(let i of colors){
         themeContainer.innerHTML += `<div class="theme-box box-shadow" style="background-color:${i};color:white;" onclick="changeTheme('${i}')">${i.toUpperCase()}</div>`;
     }
-
-    changeTheme('orange');
 }
 
+// Is color valid
+function isColor(strColor){
+    var s=new Option().style;
+     s.color = strColor;
+    return s.color == strColor;
+}
+
+changeTheme('black');
 renderThemes();
