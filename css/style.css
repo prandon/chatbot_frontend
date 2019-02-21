@@ -1,7 +1,6 @@
 /* Page styling */
 .info{
   padding: 20px;
-  border:1px solid blue;
 }
 
 .themes-container{
@@ -13,7 +12,7 @@
 .theme-box{
   display:inline-block;
   width:20%;
-  height:20%;
+  height:15%;
   text-align:center;
   font-weight: bold;
   margin: 2%;
@@ -82,7 +81,7 @@
   width:150px;
   margin: 3px auto;
 	position: relative;
-	background: white;
+	background: rgb(240, 240, 240);
 	border-radius: .4em;
   white-space: pre-wrap;      /* CSS3 */   
   white-space: -moz-pre-wrap; /* Firefox */    
@@ -99,7 +98,7 @@
     width: 0;
     height: 0;
     border: 10px solid transparent;
-    border-left-color: white;
+    border-left-color: rgb(240, 240, 240);
     border-right: 0;
     border-bottom: 0;
     margin-top: 0px;
@@ -113,7 +112,7 @@
   width:150px;
   margin: 3px auto;
 	position: relative;
-	background: white;
+	background: rgb(240, 240, 240);
 	border-radius: .4em;
   white-space: pre-wrap;      /* CSS3 */   
   white-space: -moz-pre-wrap; /* Firefox */    
@@ -130,7 +129,7 @@
 	width: 0;
 	height: 0;
 	border: 10px solid transparent;
-	border-right-color: white;
+	border-right-color: rgb(240, 240, 240);
 	border-left: 0;
 	border-bottom: 0;
 	margin-top: 0px;

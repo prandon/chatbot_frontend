@@ -5,8 +5,6 @@ let toggleViewBtn = document.getElementById("toggleViewBtn");
 let chatContainer = document.getElementById("chatContainer");
 let chatBoxHeader = document.getElementById("chatBoxHeader");
 
-
-
 // When user hit send the message following function executes. 
 const userAction = async () => {
   let input = inputBox.value;
@@ -53,27 +51,18 @@ function toggleView() {
 
 // Theme changing function 
 function changeTheme(color){
-
     chatBoxHeader.style.backgroundColor = color;
     chatBoxHeader.style.color = 'white';
     toggleViewBtn.style.backgroundColor = color;
     toggleViewBtn.style.color = 'white';
     chatBox.style.backgroundImage= 'linear-gradient(to bottom, white 40%, '+color+')';
 
-    let array = document.getElementsByClassName('sent');
-
-    if(array.length>0){ 
-        array = [...array,...document.getElementsByClassName('received')];
-        for(let i of array){
-            i.style.border = '1px solid '+color;
-        }
-    }
 }
 
 // Render themes
 function renderThemes(){
     var themeContainer = document.getElementById("themes");
-    let colors = ['red','orange','darkorange','blue','skyblue','black','darkgrey','gold','tomato'];
+    let colors = ['red','orange','darkorange','blue','skyblue','black','darkgrey','gold','tomato','pink','aqua','indigo','lightskyblue','cornflowerblue','violet','#23456A'];
 
     for(let i of colors){
         themeContainer.innerHTML += `<div class="theme-box box-shadow" style="background-color:${i};color:white;" onclick="changeTheme('${i}')">${i.toUpperCase()}</div>`;
