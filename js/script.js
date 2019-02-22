@@ -15,7 +15,7 @@ const userAction = async () => {
   inputBox.value = "";
   if(input!=""){
     addMe(input, "sent", id++);
-    const response = await fetch("http://localhost:8090", { // Your DialogFlow gateway api url
+    const response = await fetch("localhost:8000/", { // Your DialogFlow gateway api url
         method: "POST",
         body: JSON.stringify({
         q: input,
@@ -29,7 +29,9 @@ const userAction = async () => {
     const myJson = await response.json();
     // do something with myJson
     let res = myJson.queryResult.fulfillmentText;
-    addMe(res, "received", id++);
+    if(res.trim()!=''){
+        addMe(res, "received", id++);
+    }
     }
 };
 
