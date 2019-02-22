@@ -8,6 +8,8 @@ let themeContainer = document.getElementById("themes");
 let chatBoxHeader = document.getElementById("chatBoxHeader");
 let colors = ['black','darkgreen','red','darkblue'];
 
+let gatewayUrl = "your-gateway-url-here"; // Your DialogFlow gateway api url
+
 
 // When user hit send the message following function executes. 
 const userAction = async () => {
@@ -15,7 +17,7 @@ const userAction = async () => {
   inputBox.value = "";
   if(input!=""){
     addMe(input, "sent", id++);
-    const response = await fetch("localhost:8000/", { // Your DialogFlow gateway api url
+    const response = await fetch(gatewayUrl, { 
         method: "POST",
         body: JSON.stringify({
         q: input,
